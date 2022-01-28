@@ -14,6 +14,7 @@ const NumberButtons = (props) => {
             <GenerateButton value={8}/>
             <GenerateButton value={9}/>
             <GenerateButton value={0}/>
+            <GenerateButton value={'.'}/>
         </div>
     );
 }
