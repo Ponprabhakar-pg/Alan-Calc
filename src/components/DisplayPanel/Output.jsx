@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 
-const Output = (props) => {
-  const [output, setOutput] = useState('');
+
+const Output = ({input}) => {
+  console.log();
+  //const [output, setOutput] = useState('');
 //   if (props.update !== undefined || props.update !== null) {
 //     console.log(props.update);
 //     setOutput(props.update);
 //   }
-//  console.log("***");
+//  console.log("*");
   return (
     <div>
-      <input type="text" name="output" defaultValue={props.update} disabled={true} />
+      <input type="text" name="output" defaultValue={input} disabled={true} />
       
     </div>
   );
@@ -21,7 +23,7 @@ const Output = (props) => {
 //     const [output,setOutput] = useState('');
 
 //     if(props.update===undefined || props.update===null){
-//         console.log("***");
+//         console.log("*");
 //         return(
 //             <div>
 //                 <input
@@ -39,4 +41,3 @@ const Output = (props) => {
 // }
 
 export default Output;
-

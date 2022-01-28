@@ -14,13 +14,35 @@ const Input = (props) => {
     }
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(event.target[0].value);
-        let op = eval(input.toString());
-        <Output update={op}/>
+        // console.log(event.target[0].value);
+        //let op = eval(input.toString());
+        {input &&
+            <div>
+                <Output 
+                    input={input}
+                />
+            </div>
+        }
         console.log(event.target[0].value);
     }
 
+    const handleChange=(evl)=>{
+        console.log(evl)
+        let op=evl;
+        try{
+           op=eval(evl);
+        }
+        catch(err){
+            op=evl;
+        }
+        finally{
+            return op;
+        }
+
+    }
+
     return(
+        <>
         <div>
             <form onSubmit={handleSubmit}>
                 <input 
@@ -38,6 +60,15 @@ const Input = (props) => {
                 
             </form>
         </div>
+        {input &&
+            <div>
+                <Output 
+                    input={eval(input)}
+                />
+            </div>
+        }
+
+        </>
     );
 }
 
