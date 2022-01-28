@@ -1,14 +1,10 @@
 import React from 'react';
 import GenerateButton from './GenerateButton';
 const OperationButtons = (props) => {
+    let operators=['+','-','*','/','%','C','='];
     return(
         <div>
-            <GenerateButton value={"+"}/>
-            <GenerateButton value={"-"}/>
-            <GenerateButton value={"*"}/>
-            <GenerateButton value={"/"}/>
-            <GenerateButton value={"C"}/>
-            <GenerateButton value={"="}/>
+            {operators.map((op)=><GenerateButton value={op}/>)}
         </div>
     );
 }

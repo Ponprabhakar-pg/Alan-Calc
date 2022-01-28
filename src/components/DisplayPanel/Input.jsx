@@ -2,44 +2,44 @@ import React, {useState} from 'react';
 
 import Output from './Output.jsx';
 
-const Input = (props) => {
-    
+const Input = ({ip}) => {
+    console.log(ip);
     const [input,setInput] = useState('');
-    if(props.value!==undefined){
-        if(props.value==='C'){
+    if(ip!==undefined){
+        if(ip==='C'){
             setInput(input.slice(0 ,-1));
         }else{
-        setInput(input+props.value.toString());
+        setInput(input+ip.toString());
         }
     }
     const handleSubmit = (event) => {
         event.preventDefault();
-        // console.log(event.target[0].value);
-        //let op = eval(input.toString());
-        {input &&
-            <div>
-                <Output 
-                    input={input}
-                />
-            </div>
-        }
-        console.log(event.target[0].value);
-    }
-
-    const handleChange=(evl)=>{
-        console.log(evl)
-        let op=evl;
+        let op=document.getElementById('input').value;
+        console.log(op);
         try{
-           op=eval(evl);
+           op=eval(op.toString());
         }
         catch(err){
-            op=evl;
         }
         finally{
-            return op;
+            document.getElementById('output').value=op;
         }
-
     }
+
+    // const handleChange=(e)=>{
+    //     let op=document.getElementById('input').value;
+        
+    //     console.log(e,"hello");
+    //     try{
+    //        op=eval(op.toString());
+    //     }
+    //     catch(err){
+    //     }
+    //     finally{
+    //         document.getElementById('output').value=op;
+    //     }
+
+    // }
 
     return(
         <>
@@ -48,9 +48,7 @@ const Input = (props) => {
                 <input 
                 type="text" 
                 name="input" 
-                value={input}
-                onChange={(e)=>{setInput(e.target.value)}} 
-                
+                id="input"
                 />
                 
                 <input 
@@ -60,13 +58,15 @@ const Input = (props) => {
                 
             </form>
         </div>
-        {input &&
+
+        {/* {input &&
             <div>
                 <Output 
-                    input={eval(input)}
+                    input={handleChange(input)}
                 />
+
             </div>
-        }
+        } */}
 
         </>
     );

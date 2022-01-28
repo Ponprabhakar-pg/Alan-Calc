@@ -11,7 +11,7 @@ const Output = ({input}) => {
 //  console.log("*");
   return (
     <div>
-      <input type="text" name="output" defaultValue={input} disabled={true} />
+      <input type="text" name="output" value={input} disabled={true} id="output" />
       
     </div>
   );

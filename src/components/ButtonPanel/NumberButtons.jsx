@@ -1,21 +1,14 @@
 import React from 'react';
+import Input from '../DisplayPanel/Input';
 import GenerateButton from './GenerateButton';
 
 const NumberButtons = (props) => {
+    let numbersToDisplay=[1,2,3,4,5,6,7,8,9,0,'.'];
     return(
         <div>
-            <GenerateButton value={1}/>
-            <GenerateButton value={2}/>
-            <GenerateButton value={3}/>
-            <GenerateButton value={4}/>
-            <GenerateButton value={5}/>
-            <GenerateButton value={6}/><br/>
-            <GenerateButton value={7}/>
-            <GenerateButton value={8}/>
-            <GenerateButton value={9}/>
-            <GenerateButton value={0}/>
-            <GenerateButton value={'.'}/>
+            {numbersToDisplay.map((lt)=><GenerateButton value={lt}/>)}
         </div>
+       
     );
 }
 

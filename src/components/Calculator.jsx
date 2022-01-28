@@ -6,7 +6,7 @@ import Output from './DisplayPanel/Output.jsx';
 const Calculator = (props) => {
     return(
         <div className='calculator'>
-            <div className='display'><span><Input /></span><br/></div>
+            <div className='display'><span><Input /></span><br/><span><Output /></span></div>
             <div className='button'><OperationButtons/><NumberButtons/></div>
         </div>
     );
